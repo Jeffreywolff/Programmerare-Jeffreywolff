@@ -20,6 +20,12 @@ public class basics {
 		System.out.println("Whats your phone number?");
 		String phonenum = input.nextLine();
 		
+		System.out.println("Information:");
+		System.out.println("Name: " + Name);
+		System.out.println("Age: " + age);
+		System.out.print("Adress: " + address + "\n \t" +  pcode + "\n \t" +  city + "\n");
+		System.out.println("PhoneNumber: " + phonenum);
+		
 		
 	}
 
