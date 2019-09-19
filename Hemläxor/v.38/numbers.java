@@ -17,6 +17,20 @@ public class numbers {
 			if (a == 0) {
 			low = answer;
 			high = answer;
+			}
+			total+=answer;
+		    if (answer > high) {
+		    	high = answer;
+		    }
+			if (answer < low) {
+				low = answer;
+			}
+			
+		}
+		System.out.println("Mean: " + total/10);
+		System.out.println("Highest:  " + high);
+		System.out.println("Lowest: " + low);
+		
 
 		
 		
