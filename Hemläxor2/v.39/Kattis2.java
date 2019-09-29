@@ -19,7 +19,7 @@ public class Kattis2 {
 			System.out.println("X: " + x1 + " Y: " + y1 + "\n" + "Is in quadrant number 3");
 		}
 		else if(x1>0 && y1<0) {
-			System.out.println("X: " + x1 + " Y: " + y1 + "\n" + "Is in quadrant number 4");
+			System.out.println("X:  " + x1 + " Y: " + y1 + "\n" + "Is in quadrant number 4");
 		}
 		
 
