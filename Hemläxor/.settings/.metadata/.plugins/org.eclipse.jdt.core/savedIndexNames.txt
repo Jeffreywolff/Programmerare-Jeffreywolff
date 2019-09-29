@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Jeffrey.wolff\Desktop\Programmerare-Jeffreywolff\Hemläxor\.settings\.metadata\.plugins\org.eclipse.jdt.core
+3869250273.index
