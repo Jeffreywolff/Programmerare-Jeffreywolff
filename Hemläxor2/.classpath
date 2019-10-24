@@ -6,5 +6,8 @@
 	<classpathentry kind="src" path="v.38"/>
 	<classpathentry kind="src" path="v.37"/>
 	<classpathentry kind="src" path="v.40"/>
+	<classpathentry kind="src" path="Extraassignments"/>
+	<classpathentry kind="src" path="Lektioner"/>
+	<classpathentry kind="src" path="v.43"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
