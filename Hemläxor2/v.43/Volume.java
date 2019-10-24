@@ -12,6 +12,7 @@ public class Volume {
 		System.out.println(Volume(radius));
 		
 		// Homework 2
+		scan.nextLine();
 		String str = scan.nextLine();
 		System.out.println(reverse(str));
 
@@ -24,8 +25,8 @@ public class Volume {
 	
 	public static String reverse(String str) {
 		String revStr = "";
-		for(int i = str.length(); i>=0; i--) {
-			revStr = revStr + str.charAt(i);
+		for(int i = str.length() - 1; i>=0; i--) {
+			revStr += str.charAt(i);
 		}
 		return(revStr);
 		
