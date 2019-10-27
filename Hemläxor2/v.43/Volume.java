@@ -22,7 +22,8 @@ public class Volume {
 		System.out.println(count(str1, c));
 		
 		// Homework 4
-
+		String str2 = scan.nextLine();
+		System.out.println(sjorovare(str2));
 	}
 	
 	/**
@@ -64,5 +65,22 @@ public class Volume {
 			}
 		}
 		return countC;
+	}
+	
+	
+	public static String sjorovare(String str2) {
+		char[] vokals = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
+		String rovareString = "";
+		for(int i = 0; i<str2.length();i++) {
+			for(int y = 0; y < vokals.length -1;y++) {
+				if(str2.charAt(i) != vokals[y]) {
+					rovareString += str2.charAt(i) + 'o' + str2.charAt(i);
+				}
+				
+			}
+		}
+		
+		
+		return rovareString;
 	}
 }
