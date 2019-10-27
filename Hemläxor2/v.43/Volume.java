@@ -78,16 +78,16 @@ public class Volume {
 	public static String sjorovare(String str2) {
 		ArrayList<Character> vokals2 = new ArrayList<Character>();
 		char[] vokals1 = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
-		for(int k=0; k<10;k++) {
+		for(int k=0; k<vokals1.length -1 ;k++) {
 			vokals2.add(vokals1[k]);
 		}
 		String rovareString = "";
-		for(int i = 0; i<str2.length()-1;i++) {
+		for(int i = 0; i<str2.length();i++) {
 			if(vokals2.contains(str2.charAt(i))) {
 				rovareString += str2.charAt(i);
 			}
 			else {
-				rovareString += str2.charAt(i) + 'o' + str2.charAt(i);
+				rovareString += str2.charAt(i) + "o" + str2.charAt(i);
 			}
 			
 		}
