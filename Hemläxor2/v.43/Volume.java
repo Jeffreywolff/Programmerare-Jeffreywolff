@@ -93,6 +93,6 @@ public class Volume {
 		}
 		
 		
-		return rovareString.toLowerCase();
+		return rovareString;
 	}
 }
