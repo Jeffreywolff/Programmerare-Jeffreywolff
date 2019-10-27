@@ -78,7 +78,7 @@ public class Volume {
 	public static String sjorovare(String str2) {
 		ArrayList<Character> konsonant2 = new ArrayList<Character>();
 		char[] konsonant1 = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'};
-		for(int j=0; j< konsonant1.length -1 ;j++) {
+		for(int j=0; j< konsonant1.length ;j++) {
 			konsonant2.add(konsonant1[j]);
 		}
 		String rovareString = "";
