@@ -72,18 +72,18 @@ public class Volume {
 	
 	/**
 	 * 
-	 * @param str2
-	 * @return
+	 * @param str2 is an input that will be converted into the rovar language.
+	 * @return returns the string that contains the rovar language of str2
 	 */
 	public static String sjorovare(String str2) {
-		ArrayList<Character> vokals2 = new ArrayList<Character>();
-		char[] vokals1 = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
-		for(int k=0; k<vokals1.length -1 ;k++) {
-			vokals2.add(vokals1[k]);
+		ArrayList<Character> konsonant2 = new ArrayList<Character>();
+		char[] konsonant1 = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'};
+		for(int j=0; j< konsonant1.length -1 ;j++) {
+			konsonant2.add(konsonant1[j]);
 		}
 		String rovareString = "";
 		for(int i = 0; i<str2.length();i++) {
-			if(vokals2.contains(str2.charAt(i))) {
+			if(!konsonant2.contains(str2.charAt(i))) {
 				rovareString += str2.charAt(i);
 			}
 			else {
