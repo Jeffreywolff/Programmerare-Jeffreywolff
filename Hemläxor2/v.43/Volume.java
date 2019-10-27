@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.lang.Math;
 
 
@@ -21,6 +22,8 @@ public class Volume {
 		char c = scan.next().charAt(0);
 		System.out.println(count(str1, c));
 		
+		scan.nextLine();
+		
 		// Homework 4
 		String str2 = scan.nextLine();
 		System.out.println(sjorovare(str2));
@@ -28,8 +31,8 @@ public class Volume {
 	
 	/**
 	 * 
-	 * @param radius
-	 * @return
+	 * @param radius is a input of numbers
+	 * @return returns the volume of a sphere
 	 */
 	public static double Volume(double radius) {
 		return  (4 * Math.PI * Math.pow(radius, 3))/3;
@@ -38,8 +41,8 @@ public class Volume {
 	
 	/**
 	 * 
-	 * @param str
-	 * @return
+	 * @param str is a input of a string that is reversed
+	 * @return returns str reversed
 	 */
 	public static String reverse(String str) {
 		String revStr = "";
@@ -52,9 +55,9 @@ public class Volume {
 	
 	/**
 	 * 
-	 * @param str1
-	 * @param c
-	 * @return
+	 * @param str1 is a input of a string
+	 * @param c a input of a character
+	 * @return how many times the Character 'c'(input from user) is counted in the String str1
 	 */
 	public static int count(String str1, char c) {
 		int countC = 0;
@@ -67,17 +70,26 @@ public class Volume {
 		return countC;
 	}
 	
-	
+	/**
+	 * 
+	 * @param str2
+	 * @return
+	 */
 	public static String sjorovare(String str2) {
-		char[] vokals = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
+		ArrayList<Character> vokals2 = new ArrayList<Character>();
+		char[] vokals1 = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
+		for(int k=0; k<10;k++) {
+			vokals2.add(vokals1[k]);
+		}
 		String rovareString = "";
-		for(int i = 0; i<str2.length();i++) {
-			for(int y = 0; y < vokals.length -1;y++) {
-				if(str2.charAt(i) != vokals[y]) {
-					rovareString += str2.charAt(i) + 'o' + str2.charAt(i);
-				}
-				
+		for(int i = 0; i<str2.length()-1;i++) {
+			if(vokals2.contains(str2.charAt(i))) {
+				rovareString += str2.charAt(i);
 			}
+			else {
+				rovareString += str2.charAt(i) + 'o' + str2.charAt(i);
+			}
+			
 		}
 		
 		
