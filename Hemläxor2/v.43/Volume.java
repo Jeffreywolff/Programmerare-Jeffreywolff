@@ -83,16 +83,16 @@ public class Volume {
 		}
 		String rovareString = "";
 		for(int i = 0; i<str2.length();i++) {
-			if(!konsonant2.contains(str2.charAt(i))) {
+			if(!konsonant2.contains(str2.toLowerCase().charAt(i))) {
 				rovareString += str2.charAt(i);
 			}
 			else {
-				rovareString += str2.charAt(i) + "o" + str2.charAt(i);
+				rovareString += str2.charAt(i) + "o" + str2.toLowerCase().charAt(i);
 			}
 			
 		}
 		
 		
-		return rovareString;
+		return rovareString.toLowerCase();
 	}
 }
