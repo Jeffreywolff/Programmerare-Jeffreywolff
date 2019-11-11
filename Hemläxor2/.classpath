@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="Extraassignments"/>
 	<classpathentry kind="src" path="Lektioner"/>
 	<classpathentry kind="src" path="v.43"/>
+	<classpathentry kind="src" path="EgnaProjekt"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
