@@ -10,6 +10,7 @@ public class main {
 		System.out.println(fluidPressure(FluidTable.WATER, 10));
 		System.out.println(pressureUnderWater(10));
 		System.out.println(kineticEnergy(2,2));
+		System.out.println(potentialEnergy(2,5));
 		
 	}
 
@@ -40,5 +41,17 @@ public class main {
 		double eK = mass * Math.pow(velocity, 2)/2;
 		return eK;
 		
+	}
+	
+	public static double potentialEnergy(double mass, double height) {
+		
+		double eP = mass * 9.82 * height;
+		return eP;
+	}
+	
+	public static double fallSpeed(double height) {
+		// v = sqrt(2gs)
+		double fallV = Math.sqrt(2*9.82*height);
+		return fallV;
 	}
 }
