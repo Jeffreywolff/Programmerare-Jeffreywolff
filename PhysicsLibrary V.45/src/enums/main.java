@@ -61,4 +61,8 @@ public class main {
 		return delta;
 	}
 	
+	public static double volumeToMass(FluidTable fluid, double volume) {
+		
+	}
+	
 }
