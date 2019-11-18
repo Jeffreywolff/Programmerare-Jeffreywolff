@@ -11,6 +11,7 @@ public class main {
 		System.out.println(pressureUnderWater(10));
 		System.out.println(kineticEnergy(2,2));
 		System.out.println(potentialEnergy(2,5));
+		System.out.println(delta(1,10));
 		
 	}
 
@@ -54,4 +55,10 @@ public class main {
 		double fallV = Math.sqrt(2*9.82*height);
 		return fallV;
 	}
+	
+	public static double delta(double first, double last) {
+		double delta = last - first;
+		return delta;
+	}
+	
 }
