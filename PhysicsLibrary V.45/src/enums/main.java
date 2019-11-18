@@ -1,4 +1,6 @@
 package enums;
+import java.lang.Math;
+
 
 public class main {
 
@@ -7,6 +9,7 @@ public class main {
 		System.out.println(kelvinToCelsius(0));
 		System.out.println(fluidPressure(FluidTable.WATER, 10));
 		System.out.println(pressureUnderWater(10));
+		System.out.println(kineticEnergy(2,2));
 		
 	}
 
@@ -33,4 +36,9 @@ public class main {
 		
 	}
 	
+	public static double kineticEnergy(double mass, double velocity) {
+		double eK = mass * Math.pow(velocity, 2)/2;
+		return eK;
+		
+	}
 }
