@@ -20,6 +20,8 @@ public class main {
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
+		System.out.println(heat(SolidTable.IRON,1,2));
+		
 		
 		
 	}
@@ -109,6 +111,10 @@ public class main {
 		// power(W) = Work(J)/Time(s) = J/s = Joules per second.
 		double powerW = work / time;
 		return powerW;
+	}
+	
+	public static double heat(SolidTable solid, double mass, double deltaT) {
+		double
 	}
 	
 }
