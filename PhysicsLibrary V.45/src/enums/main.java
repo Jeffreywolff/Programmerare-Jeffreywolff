@@ -12,6 +12,8 @@ public class main {
 		System.out.println(kineticEnergy(2,2));
 		System.out.println(potentialEnergy(2,5));
 		System.out.println(delta(1,10));
+		System.out.println(volumeToMass(FluidTable.WATER,1));
+		System.out.println(volumeToMass(GasTable.AIR,1));
 		
 	}
 
@@ -62,7 +64,12 @@ public class main {
 	}
 	
 	public static double volumeToMass(FluidTable fluid, double volume) {
-		
+		double vTM = fluid.density * volume;
+		return vTM;
+	}
+	public static double volumeToMass(GasTable gas, double volume) {
+		double vTM = gas.density * volume;
+		return vTM;
 	}
 	
 }
