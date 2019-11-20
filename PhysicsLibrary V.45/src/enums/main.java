@@ -16,6 +16,9 @@ public class main {
 		System.out.println(volumeToMass(GasTable.AIR,1));
 		System.out.println(volumeToMass(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
+		System.out.println(svtDistance(10,5));
+		System.out.println(svtTime(10,2));
+		System.out.println(work(50,10));
 		
 		
 	}
@@ -70,17 +73,37 @@ public class main {
 		double vTM = fluid.density * volume;
 		return vTM;
 	}
+	
 	public static double volumeToMass(GasTable gas, double volume) {
 		double vTM = gas.density * volume;
 		return vTM;
 	}
+	
 	public static double volumeToMass(SolidTable solid, double volume) {
 		double vTM = solid.density * volume;
 		return vTM;
 	}
+	
 	public static double svtVelocity(double distance, double time) {
 		double mVelocity = distance/time;
 		return mVelocity;
 	}
+	
+	public static double svtDistance(double velocity, double time) {
+		double dist = velocity * time;
+		return dist;
+	}
+	
+	public static double svtTime(double distance, double velocity) {
+		double time = distance/velocity;
+		return time;
+	}
+	
+	public static double work(double force, double distance) {
+		double work = force * distance;
+		return work;
+	}
+	
+	
 	
 }
