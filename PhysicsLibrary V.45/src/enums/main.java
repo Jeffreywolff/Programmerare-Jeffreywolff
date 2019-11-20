@@ -19,6 +19,7 @@ public class main {
 		System.out.println(svtDistance(10,5));
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
+		System.out.println(power(1000,2));
 		
 		
 	}
@@ -104,6 +105,10 @@ public class main {
 		return work;
 	}
 	
-	
+	public static double power(double work, double time) {
+		// power(W) = Work(J)/Time(s) = J/s = Joules per second.
+		double powerW = work / time;
+		return powerW;
+	}
 	
 }
