@@ -126,6 +126,11 @@ public class main {
 		 double energy = fluid.heatCapacity * mass * deltaT;
 		 return energy;
 	 }
+	 public static double heat(GasTable gas, double mass, double deltaT) {
+		 double energy = gas.heatCapacity * mass * deltaT;
+		 return energy;
+	 }
+	 
 
  
 	
