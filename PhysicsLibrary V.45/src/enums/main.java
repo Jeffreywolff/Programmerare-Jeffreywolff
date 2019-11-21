@@ -2,7 +2,9 @@ package enums;
 import java.lang.Math;
 
 
+
 public class main {
+	static double g_swe = 9.82;
 
 	public static void main(String[] args) {
 		System.out.println(fahrenheitToCelsius(50)); 
@@ -21,6 +23,9 @@ public class main {
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
 		System.out.println(heat(SolidTable.IRON,1,2));
+		System.out.println(heat(FluidTable.WATER,1,10));
+		System.out.println(heat(GasTable.AIR,1,1));
+		System.out.println(velocityToHeight(9.82));
 		
 		
 		
@@ -114,7 +119,23 @@ public class main {
 	}
 	
 	public static double heat(SolidTable solid, double mass, double deltaT) {
-		double
+		double energy = solid.heatCapacity * mass * deltaT;
+		return energy;
 	}
+	 public static double heat(FluidTable fluid, double mass, double deltaT) {
+		 double energy = fluid.heatCapacity * mass * deltaT;
+		 return energy;
+	 }
+	 public static double heat(GasTable gas, double mass, double deltaT) {
+		 double energy = gas.heatCapacity * mass * deltaT;
+		 return energy;
+	 }
+	 
+	 public static double velocityToHeight(double velocity) {
+		 // height = v^2 * sin^2 (90(redian))/2 * 9.82
+		 double height = (Math.pow(Math.sin(1.570796), 2) * Math.pow(velocity, 2)) / (2 * g_swe);
+		 return height;
+	 }
+ 
 	
 }
