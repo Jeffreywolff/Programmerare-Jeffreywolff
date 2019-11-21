@@ -131,7 +131,11 @@ public class main {
 		 return energy;
 	 }
 	 
-
+	 public static double velocityToHeight(double velocity) {
+		 // height = v^2 * sin^2 (90(redian))/2 * 9.82
+		 double height = (Math.pow(Math.sin(1.570796), 2) * Math.pow(velocity, 2)) / (2 * g_swe);
+		 return height;
+	 }
  
 	
 }
