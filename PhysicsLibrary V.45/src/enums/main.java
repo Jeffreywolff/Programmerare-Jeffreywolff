@@ -49,6 +49,12 @@ public class main {
 		return celsius;
 		// return kelvin - 273.15
 	}
+	/**
+	 * 
+	 * @param fluid
+	 * @param deep
+	 * @return
+	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		//p*g*h
 		double pressure = (fluid.density * 9.82 * deep);
