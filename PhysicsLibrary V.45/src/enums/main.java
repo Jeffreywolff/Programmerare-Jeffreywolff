@@ -30,12 +30,20 @@ public class main {
 		
 		
 	}
-
+	/**
+	 * The method converts fahrenheit to Celsius.
+	 * @param fahrenheit - Data for fahrenheit -
+	 * @return Fahrenheit in Celsius.
+	 */
 	public static double fahrenheitToCelsius(double fahrenheit) {
 		double celsius = (fahrenheit - 32) * 5/9;
 		return celsius;
 	}
-	
+	/**
+	 *  The method converts Kelvin to Celsius.
+	 * @param kelvin - Data for Kelvin -
+	 * @return Kelvin in Celsius.
+	 */
 	public static double kelvinToCelsius(double kelvin) {
 		double celsius = (kelvin - 273.15);
 		return celsius;
