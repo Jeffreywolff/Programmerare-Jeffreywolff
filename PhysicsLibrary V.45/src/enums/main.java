@@ -232,6 +232,14 @@ public class main {
 		 double energy = fluid.heatCapacity * mass * deltaT;
 		 return energy;
 	 }
+	 
+	 /**
+	  * Calculates the amount of energy required to heat a given gas a specified number of degrees.
+	  * @param gas - Data of gas -
+	  * @param mass - Data of mass -
+	  * @param deltaT - Data of defference in time -
+	  * @return The amount of energy required.
+	  */
 	 public static double heat(GasTable gas, double mass, double deltaT) {
 		 double energy = gas.heatCapacity * mass * deltaT;
 		 return energy;
