@@ -153,6 +153,12 @@ public class main {
 		return vTM;
 	}
 	
+	/**
+	 *  Calculates the velocity by Dividing time from distance.
+	 * @param distance - Data of distance -
+	 * @param time - Data of Time - 
+	 * @return velocity.
+	 */
 	public static double svtVelocity(double distance, double time) {
 		double mVelocity = distance/time;
 		return mVelocity;
