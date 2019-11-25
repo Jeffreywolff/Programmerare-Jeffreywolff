@@ -121,7 +121,7 @@ public class main {
 	}
 	
 	/**
-	 * Calculates the potential mass from a fluid, with a certain volume-
+	 * Calculates the potential mass from a fluid, with a certain volume.
 	 * @param fluid - Data of fluid -
 	 * @param volume -Data of Volume -
 	 * @return potential mass.
@@ -131,6 +131,12 @@ public class main {
 		return vTM;
 	}
 	
+	/**
+	 * Calculates the potential mass from a gas, with a certain volume
+	 * @param gas - Data of gas -
+	 * @param volume - Data of volume -
+	 * @return potential mass.
+	 */
 	public static double volumeToMass(GasTable gas, double volume) {
 		double vTM = gas.density * volume;
 		return vTM;
