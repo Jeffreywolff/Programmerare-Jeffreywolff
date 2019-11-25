@@ -186,6 +186,12 @@ public class main {
 		return time;
 	}
 	
+	/**
+	 * Calculates Work(Newtonmeter, Nm) by taking force times distance.
+	 * @param force - Data och force(F) -
+	 * @param distance - Data of distance(S) - 
+	 * @return Work(Newtonmeter, Nm)
+	 */
 	public static double work(double force, double distance) {
 		double work = force * distance;
 		return work;
