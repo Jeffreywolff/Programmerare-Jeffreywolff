@@ -142,6 +142,12 @@ public class main {
 		return vTM;
 	}
 	
+	/**
+	 * Calculates the potential mass from a gas, with a certain volume
+	 * @param solid - data of Solid -
+	 * @param volume - Data om volume -
+	 * @return potential mass.
+	 */
 	public static double volumeToMass(SolidTable solid, double volume) {
 		double vTM = solid.density * volume;
 		return vTM;
