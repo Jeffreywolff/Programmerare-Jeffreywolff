@@ -109,11 +109,23 @@ public class main {
 		return fallV;
 	}
 	
+	/**
+	 * Calculates the difference between the data.
+	 * @param first - Data of first number. -
+	 * @param last - Data of last number. -
+	 * @return diffrence between the numbers first and last.
+	 */
 	public static double delta(double first, double last) {
 		double delta = last - first;
 		return delta;
 	}
 	
+	/**
+	 * Calculates the potential mass from a fluid, with a certain volume-
+	 * @param fluid - Data of fluid -
+	 * @param volume -Data of Volume -
+	 * @return potential mass.
+	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		double vTM = fluid.density * volume;
 		return vTM;
