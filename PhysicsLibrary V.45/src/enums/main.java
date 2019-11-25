@@ -86,6 +86,12 @@ public class main {
 		
 	}
 	
+	/**
+	 * Calculates the Potential energy with mass * height.
+	 * @param mass - Data for mass(kg) -
+	 * @param height - Data for height(m) -
+	 * @return potential energy(Joule, J)
+	 */
 	public static double potentialEnergy(double mass, double height) {
 		
 		double eP = mass * 9.82 * height;
