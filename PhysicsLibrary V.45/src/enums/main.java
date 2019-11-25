@@ -5,7 +5,7 @@ import java.lang.Math;
 
 public class main {
 	static double g_swe = 9.82;
-// Everything is in SI- units.
+// All data is determined in SI-units, if nothing else is said.
 	public static void main(String[] args) {
 		System.out.println(fahrenheitToCelsius(50)); 
 		System.out.println(kelvinToCelsius(0));
@@ -98,6 +98,11 @@ public class main {
 		return eP;
 	}
 	
+	/**
+	 * Calculates the speed of something falling from a specific height.
+	 * @param height - Data of height(m) -
+	 * @return The velocity.
+	 */
 	public static double fallSpeed(double height) {
 		// v = sqrt(2gs)
 		double fallV = Math.sqrt(2*9.82*height);
