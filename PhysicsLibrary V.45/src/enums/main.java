@@ -164,6 +164,12 @@ public class main {
 		return mVelocity;
 	}
 	
+	/**
+	 * Calculates the distance by multiplying velocity and time.
+	 * @param velocity - Data of Velocity -
+	 * @param time - Data of time -
+	 * @return distance.
+	 */
 	public static double svtDistance(double velocity, double time) {
 		double dist = velocity * time;
 		return dist;
