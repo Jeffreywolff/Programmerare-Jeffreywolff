@@ -175,6 +175,12 @@ public class main {
 		return dist;
 	}
 	
+	/**
+	 * Calculates time by dividing distance and velocity.
+	 * @param distance - Data of Distance -
+	 * @param velocity - Data of velocity -
+	 * @return time.
+	 */
 	public static double svtTime(double distance, double velocity) {
 		double time = distance/velocity;
 		return time;
