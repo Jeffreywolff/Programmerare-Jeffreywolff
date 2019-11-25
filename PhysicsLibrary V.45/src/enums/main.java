@@ -245,6 +245,11 @@ public class main {
 		 return energy;
 	 }
 	 
+	 /**
+	  * Calculates how high an object is going upwards at a certain speed.
+	  * @param velocity - Data of Velocity -
+	  * @return Height of  an object.
+	  */
 	 public static double velocityToHeight(double velocity) {
 		 // height = v^2 * sin^2 (90(radian))/2 * 9.82
 		 double height = (Math.pow(Math.sin(1.570796), 2) * Math.pow(velocity, 2)) / (2 * g_swe);
