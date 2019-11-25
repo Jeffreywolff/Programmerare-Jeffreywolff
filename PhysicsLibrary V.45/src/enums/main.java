@@ -5,7 +5,7 @@ import java.lang.Math;
 
 public class main {
 	static double g_swe = 9.82;
-
+// Everything is in SI- units.
 	public static void main(String[] args) {
 		System.out.println(fahrenheitToCelsius(50)); 
 		System.out.println(kelvinToCelsius(0));
@@ -53,7 +53,7 @@ public class main {
 	 * Calculates the pressure on a certain depth.
 	 * 
 	 * @param fluid - Data for what fluid is used. -
-	 * @param deep - Data for depth -
+	 * @param deep - Data for depth(m) -
 	 * @return The pressure in a certain fluid and on a certain depth.
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
@@ -64,7 +64,7 @@ public class main {
 	
 	/**
 	 * Calculates the pressure under water.
-	 * @param deep - Data for depth -
+	 * @param deep - Data for depth(m) -
 	 * @return Pressure under water.
 	 */
 	public static double pressureUnderWater(double deep) {
@@ -74,6 +74,12 @@ public class main {
 		
 	}
 	
+	/**
+	 * Calculates Kenetic energy(Movement energy) with mass * velocity.
+	 * @param mass - Data for mass(kg) -
+	 * @param velocity - Data for velocity(m/s) -
+	 * @return The kenetic energy(Joule, J)
+	 */
 	public static double kineticEnergy(double mass, double velocity) {
 		double eK = mass * Math.pow(velocity, 2)/2;
 		return eK;
