@@ -197,8 +197,14 @@ public class main {
 		return work;
 	}
 	
+	/**
+	 * Calculates Power by dividing time(s) from work(Nm)
+	 * @param work - Data of Work -
+	 * @param time - Data of Time -
+	 * @return power(Watt, w)
+	 */
 	public static double power(double work, double time) {
-		// power(W) = Work(J)/Time(s) = J/s = Joules per second.
+		// power(W) = Work(Nm)/Time(s) = Nm/s = Joules per second.
 		double powerW = work / time;
 		return powerW;
 	}
