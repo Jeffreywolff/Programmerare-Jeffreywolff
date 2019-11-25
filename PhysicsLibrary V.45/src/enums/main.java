@@ -209,6 +209,13 @@ public class main {
 		return powerW;
 	}
 	
+	/**
+	 * Calculates the amount of energy required to heat a given material a specified number of degrees.
+	 * @param solid - Data of solid -
+	 * @param mass - Data of mass -
+	 * @param deltaT - Data of defference in time -
+	 * @return The amount of energy required.
+	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		double energy = solid.heatCapacity * mass * deltaT;
 		return energy;
@@ -223,7 +230,7 @@ public class main {
 	 }
 	 
 	 public static double velocityToHeight(double velocity) {
-		 // height = v^2 * sin^2 (90(redian))/2 * 9.82
+		 // height = v^2 * sin^2 (90(radian))/2 * 9.82
 		 double height = (Math.pow(Math.sin(1.570796), 2) * Math.pow(velocity, 2)) / (2 * g_swe);
 		 return height;
 	 }
