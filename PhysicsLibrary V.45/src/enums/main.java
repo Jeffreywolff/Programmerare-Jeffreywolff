@@ -50,10 +50,11 @@ public class main {
 		// return kelvin - 273.15
 	}
 	/**
+	 * Calculates the pressure on a certain depth.
 	 * 
-	 * @param fluid
-	 * @param deep
-	 * @return
+	 * @param fluid - Data for what fluid is used. -
+	 * @param deep - Data for depth -
+	 * @return The pressure in a certain fluid and on a certain depth.
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		//p*g*h
@@ -61,6 +62,11 @@ public class main {
 		return pressure;
 	}
 	
+	/**
+	 * 
+	 * @param deep
+	 * @return
+	 */
 	public static double pressureUnderWater(double deep) {
 		//p*g*h
 		double pressure = FluidTable.WATER.density * 9.82 * deep;
