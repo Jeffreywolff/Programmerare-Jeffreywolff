@@ -63,9 +63,9 @@ public class main {
 	}
 	
 	/**
-	 * 
-	 * @param deep
-	 * @return
+	 * Calculates the pressure under water.
+	 * @param deep - Data for depth -
+	 * @return Pressure under water.
 	 */
 	public static double pressureUnderWater(double deep) {
 		//p*g*h
