@@ -220,6 +220,14 @@ public class main {
 		double energy = solid.heatCapacity * mass * deltaT;
 		return energy;
 	}
+	
+	/**
+	 * Calculates the amount of energy required to heat a given fluid a specified number of degrees.
+	 * @param fluid - Data of Fluid -
+	 * @param mass - Data of mass -
+	 * @param deltaT - Data of defference in time -
+	 * @return The amount of energy required.
+	 */
 	 public static double heat(FluidTable fluid, double mass, double deltaT) {
 		 double energy = fluid.heatCapacity * mass * deltaT;
 		 return energy;
