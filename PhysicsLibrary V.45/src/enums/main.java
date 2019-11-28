@@ -7,7 +7,8 @@ public class main {
 	static double g_swe = 9.82;
 // All data is determined in SI-units, if nothing else is said.
 	public static void main(String[] args) {
-		System.out.println(fahrenheitToCelsius(50)); 
+		
+		/*System.out.println(fahrenheitToCelsius(50)); 
 		System.out.println(kelvinToCelsius(0));
 		System.out.println(fluidPressure(FluidTable.WATER, 10));
 		System.out.println(pressureUnderWater(10));
@@ -26,7 +27,12 @@ public class main {
 		System.out.println(heat(FluidTable.WATER,1,10));
 		System.out.println(heat(GasTable.AIR,1,1));
 		System.out.println(velocityToHeight(9.82));
+		*/
 		
+		//How much does 60 dm ^ 3 iron weigh?
+		System.out.println(volumeToMass(SolidTable.IRON, 0.06 ));
+		//How far will Tomas get if he runs at an average speed of 2.7 m / s for 50 minutes?
+		System.out.println(svtDistance(2.7, 3000));
 		
 		
 	}
