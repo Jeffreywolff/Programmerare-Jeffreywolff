@@ -35,6 +35,15 @@ public class main {
 		System.out.println(svtDistance(2.7, 3000));
 		//3. How much energy is needed to heat 4 liters of water from room temperature (22 degrees) to the boiling point?
 		System.out.println(heat(FluidTable.WATER, 4, 78));
+		//4. How big is the total pressure 75 meters below sea level?
+		System.out.println(pressureUnderWater(75));
+		//5. Tomas, who is 180cm tall, throws up a ball with the mass 250 grams in the air so it gets the take off speed 60 km / h. How high is the ball?
+		System.out.println(velocityToHeight(16.6666666667));
+		//6. A car with a mass of 735kg accelerates with constant acceleration from 0-100 in 4.8 seconds. How much effect has the car's engine achieved?
+		double velocity = (svtDistance(100/3.6, 4.8));
+		System.out.println(acceleration(svtDistance(100/3.6, 4.8)));
+		
+		
 		
 	}
 	/**
@@ -261,6 +270,18 @@ public class main {
 		 // height = v^2 * sin^2 (90(radian))/2 * 9.82
 		 double height = (Math.pow(Math.sin(1.570796), 2) * Math.pow(velocity, 2)) / (2 * g_swe);
 		 return height;
+	 }
+	 
+	 
+	 public static double kMpHConvert(double kMpH) {
+		 double velocityMpS = kMpH / 3.6;
+		 return velocityMpS;
+		 
+	 }
+	 
+	 public static double acceleration(double velocityMpS) {
+		 //100
+		 
 	 }
  
 	
