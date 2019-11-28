@@ -43,7 +43,7 @@ public class main {
 		// 6. A car with a mass of 735kg accelerates with constant acceleration from
 		// 0-100 in 4.8 seconds. How much effect has the car's engine achieved?
 		System.out.println(power(work(force(735, acceleration(kMpHConvert(100), 4.8)), distance(4.8, acceleration(kMpHConvert(100), 4.8))), 4.8));
-
+		// 7. 
 	}
 
 	/**
