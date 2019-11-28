@@ -29,11 +29,12 @@ public class main {
 		System.out.println(velocityToHeight(9.82));
 		*/
 		
-		//How much does 60 dm ^ 3 iron weigh?
+		//1. How much does 60 dm ^ 3 iron weigh?
 		System.out.println(volumeToMass(SolidTable.IRON, 0.06 ));
-		//How far will Tomas get if he runs at an average speed of 2.7 m / s for 50 minutes?
+		//2. How far will Tomas get if he runs at an average speed of 2.7 m / s for 50 minutes?
 		System.out.println(svtDistance(2.7, 3000));
-		
+		//3. How much energy is needed to heat 4 liters of water from room temperature (22 degrees) to the boiling point?
+		System.out.println(heat(FluidTable.WATER, 4, 78));
 		
 	}
 	/**
