@@ -40,8 +40,7 @@ public class main {
 		//5. Tomas, who is 180cm tall, throws up a ball with the mass 250 grams in the air so it gets the take off speed 60 km / h. How high is the ball?
 		System.out.println(velocityToHeight(16.6666666667));
 		//6. A car with a mass of 735kg accelerates with constant acceleration from 0-100 in 4.8 seconds. How much effect has the car's engine achieved?
-		double velocity = (svtDistance(100/3.6, 4.8));
-		System.out.println(acceleration(svtDistance(100/3.6, 4.8)));
+		System.out.println()
 		
 		
 		
@@ -279,9 +278,15 @@ public class main {
 		 
 	 }
 	 
-	 public static double acceleration(double velocityMpS) {
-		 //100
+	 public static double acceleration(double velocityMpS, double time) {
+		 double acceleration = velocityMpS / time;
+		 return acceleration;
 		 
+	 }
+	 
+	 public static double force(double mass, double acceleration) {
+		 double force = acceleration * mass;
+		 return force;
 	 }
  
 	
