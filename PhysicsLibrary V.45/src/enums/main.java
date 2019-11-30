@@ -404,11 +404,24 @@ public class main {
 		return lenght;
 	}
 	
+	/**
+	 * A method calculating the potential energy.
+	 * @param mass - Data of mass -
+	 * @param g - Data of gravitational acceleration -
+	 * @param height - Data of height -
+	 * @return the potential energy by myltiplying the data. Return unit i Joule(J)
+	 */
 	public static double potentialEnergy(double mass, double g, double height) {
 		double potentialEnergy = mass * g * height;
 		return potentialEnergy;
 	}
 	
+	/**
+	 * A method calculating the kenetic energy.
+	 * @param mass - Data of mass -
+	 * @param velocity - Data of velocity(Meter per second) -
+	 * @return Kenetic energy by multiplying the mass and velocity(That is power by 2) and then dividing it with 2
+	 */
 	public static double keneticEnergy(double mass, double velocity) {
 		double keneticEnergy = (mass * Math.pow(velocity, 2))/2;
 		return keneticEnergy;
