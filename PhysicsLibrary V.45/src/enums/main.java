@@ -365,6 +365,11 @@ public class main {
 		return potentialEnergy;
 	}
 	
+	public static double keneticEnergy(double mass, double velocity) {
+		double keneticEnergy = (mass * Math.pow(velocity, 2))/2;
+		return keneticEnergy;
+	}
+	
 	
 	public static double mechanicalEnergy(double potentialEnergy, double keneticEnergy) {
 		double mechanicalEnergy = potentialEnergy + keneticEnergy;
