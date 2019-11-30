@@ -56,6 +56,10 @@ public class main {
 		// characteristic of the springs stiffness 96N/m. How far the spring is
 		// extended?
 		System.out.println(hookesLawLenght(force(g_swe, 13), 96));
+		
+		// 9. What speed does a rock have when it hits the ground, if it has a speed of 8 m / s at a height of 5 meters?
+		System.out.println();
+		// 10. What height height was the stone drpped from?
 	}
 
 	/**
@@ -355,4 +359,18 @@ public class main {
 		double lenght = force / springConstant;
 		return lenght;
 	}
+	
+	
+	
+	
+	public static double mechanicalEnergy(double potentialEnergy, double keneticEnergy) {
+		double mechanicalEnergy = potentialEnergy + keneticEnergy;
+		return mechanicalEnergy;
+		
+	}
+	
+	
+	
+	
+	
 }
