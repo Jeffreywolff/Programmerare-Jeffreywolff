@@ -360,7 +360,10 @@ public class main {
 		return lenght;
 	}
 	
-	
+	public static double potentialEnergy(double mass, double g, double height) {
+		double potentialEnergy = mass * g * height;
+		return potentialEnergy;
+	}
 	
 	
 	public static double mechanicalEnergy(double potentialEnergy, double keneticEnergy) {
