@@ -59,7 +59,7 @@ public class main {
 		
 		// 9. What speed does a rock that weights 1kg have when it hits the ground, if it has a speed of 8 m / s at a height of 5 meters?
 		// When it hit the ground mgh= 0 => m * Math.pow(v, 2)/2. V = sqrt(mechanicalEnergy(1)*2)
-		System.out.println(mechanicalEnergy(potentialEnergy(1, 9.82, 5), keneticEnergy(1, 8)));
+		System.out.println(velocityMechanicalEnergy_mgh0(mechanicalEnergy(potentialEnergy(1, 9.82, 5), keneticEnergy(1, 8))));
 		// 10. What height was the stone drpped from?
 	}
 
@@ -378,7 +378,7 @@ public class main {
 		
 	}
 	
-	public static double velocityMechanicalEnery(double mechanicalEnergy) {
+	public static double velocityMechanicalEnergy_mgh0(double mechanicalEnergy) {
 		double velocity = Math.sqrt(mechanicalEnergy * 2);
 		return velocity;
 	}
