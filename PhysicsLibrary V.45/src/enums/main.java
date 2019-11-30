@@ -57,9 +57,10 @@ public class main {
 		// extended?
 		System.out.println(hookesLawLenght(force(g_swe, 13), 96));
 		
-		// 9. What speed does a rock have when it hits the ground, if it has a speed of 8 m / s at a height of 5 meters?
-		System.out.println();
-		// 10. What height height was the stone drpped from?
+		// 9. What speed does a rock that weights 1kg have when it hits the ground, if it has a speed of 8 m / s at a height of 5 meters?
+		// When it hit the ground mgh= 0 => m * Math.pow(v, 2)/2. V = sqrt(mechanicalEnergy(1)*2)
+		System.out.println(mechanicalEnergy(potentialEnergy(1, 9.82, 5), keneticEnergy(1, 8)));
+		// 10. What height was the stone drpped from?
 	}
 
 	/**
@@ -375,6 +376,11 @@ public class main {
 		double mechanicalEnergy = potentialEnergy + keneticEnergy;
 		return mechanicalEnergy;
 		
+	}
+	
+	public static double velocityMechanicalEnery(double mechanicalEnergy) {
+		double velocity = Math.sqrt(mechanicalEnergy * 2);
+		return velocity;
 	}
 	
 	
