@@ -427,18 +427,34 @@ public class main {
 		return keneticEnergy;
 	}
 	
-	
+	/**
+	 * A method calculating the mechanical energy, potential energy + kenetic energy.
+	 * @param potentialEnergy - Data of potential energy -
+	 * @param keneticEnergy - Data of Kenetic energy -
+	 * @return the total enery / mechanical energy.
+	 */
 	public static double mechanicalEnergy(double potentialEnergy, double keneticEnergy) {
 		double mechanicalEnergy = potentialEnergy + keneticEnergy;
 		return mechanicalEnergy;
 		
 	}
 	
+	/**
+	 * A method calculating the unknown velocity at a certain point if we know the mechanical energy at a other point.
+	 * @param mechanicalEnergy - Data of totalenergy / mechanical energy -
+	 * @return The velocity in meters per second.
+	 */
 	public static double velocityMechanicalEnergy_mgh0(double mechanicalEnergy) {
 		double velocity = Math.sqrt(mechanicalEnergy * 2);
 		return velocity;
 	}
 	
+	/**
+	 * A method that calculates the unknown height at it's highest point.
+	 * @param mechanicalEnergy - Data of mechanical energy -
+	 * @param mass - Data of mass -
+	 * @return The height in meters.
+	 */
 	public static double heightMechanicalEnergy(double mechanicalEnergy, double mass) {
 		double height = mechanicalEnergy / (mass * g_swe);
 		return height;
