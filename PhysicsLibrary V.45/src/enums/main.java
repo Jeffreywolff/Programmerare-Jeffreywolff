@@ -4,10 +4,10 @@ import java.lang.Math;
 
 public class main {
 	static double g_swe = 9.82;
-	static double G = 	6.673 * Math.pow(10, -11); //6,673⋅10−11Nm²/kg²
-    static double R = 8.314472;
-    static double p_0 = 1013.25;
-    static double c = 299792458;
+	static double G = 6.673 * Math.pow(10, -11); // 6,673⋅10−11Nm²/kg²
+	static double R = 8.314472;
+	static double p_0 = 1013.25;
+	static double c = 299792458;
 
 // All data is determined in SI-units, if nothing else is said.
 	public static void main(String[] args) {
@@ -46,8 +46,12 @@ public class main {
 		System.out.println(velocityToHeight(16.6666666667));
 		// 6. A car with a mass of 735kg accelerates with constant acceleration from
 		// 0-100 in 4.8 seconds. How much effect has the car's engine achieved?
-		System.out.println(power(work(force(735, acceleration(kMpHConvert(100), 4.8)), distance(4.8, acceleration(kMpHConvert(100), 4.8))), 4.8));
-		// 7. 
+		System.out.println(power(work(force(735, acceleration(kMpHConvert(100), 4.8)),
+				distance(4.8, acceleration(kMpHConvert(100), 4.8))), 4.8));
+		// 7. A bouncing ball weighing 1kg is released from a height of 12 meters and
+		// every time it touches the ground it loses 1% of its energy. How many times
+		// will the ball bounce in the ground before bouncing no more than 0.5 meters?
+		System.out.println();
 	}
 
 	/**
@@ -320,6 +324,20 @@ public class main {
 	public static double distance(double time, double acceleration) {
 		double distance = (acceleration * Math.pow(time, 2)) / 2;
 		return distance;
+	}
+	
+	public static double bounceCount(double height, double mass) {
+		double potentialEnergy = mass * g_swe * height;
+		int bounceCount = 0;
+		double i = height;
+		
+		while(i>=0.5) {
+			potentialEnergy *= 0.99;
+			i = potentialEnergy / g_swe;
+			bounceCount++;
+		}
+		
+		return bounceCount;
 	}
 
 }
