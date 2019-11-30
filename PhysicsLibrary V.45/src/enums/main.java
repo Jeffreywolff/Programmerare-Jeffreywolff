@@ -4,6 +4,10 @@ import java.lang.Math;
 
 public class main {
 	static double g_swe = 9.82;
+	static double G = 	6.673 * Math.pow(10, -11); //6,673⋅10−11Nm²/kg²
+    static double R = 8.314472;
+    static double p_0 = 1013.25;
+    static double c = 299792458;
 
 // All data is determined in SI-units, if nothing else is said.
 	public static void main(String[] args) {
