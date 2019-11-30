@@ -361,10 +361,10 @@ public class main {
 	}
 
 	/**
-	 * 
-	 * @param height
-	 * @param mass
-	 * @return
+	 * A method calculating how many times a ball will bounce if it loses 1% of energy every bounce, until it reached 0.5 meters.
+	 * @param height - Data of drop height -
+	 * @param mass - Data of the balls mass -
+	 * @return How many time the ball had to bounce.
 	 */
 	public static double bounceCount(double height, double mass) {
 		double potentialEnergy = mass * g_swe * height;
