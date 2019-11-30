@@ -338,17 +338,34 @@ public class main {
 
 	}
 
-	
+	/**
+	 * A method that calculates the force by multiplying acceleration with mass.
+	 * @param acceleration - Data of acceleration -
+	 * @param mass - Data of Mass -
+	 * @return The force from acceleration and mass.
+	 */
 	public static double force(double acceleration, double mass) {
 		double force = acceleration * mass;
 		return force;
 	}
 
+	/**
+	 * A method that calculates the distance using acceleration and time.
+	 * @param time - Data of Time -
+	 * @param acceleration - Data of acceleration -
+	 * @return The distance knowing acceleration and time.
+	 */
 	public static double distance(double time, double acceleration) {
 		double distance = (acceleration * Math.pow(time, 2)) / 2;
 		return distance;
 	}
 
+	/**
+	 * 
+	 * @param height
+	 * @param mass
+	 * @return
+	 */
 	public static double bounceCount(double height, double mass) {
 		double potentialEnergy = mass * g_swe * height;
 		int bounceCount = 0;
