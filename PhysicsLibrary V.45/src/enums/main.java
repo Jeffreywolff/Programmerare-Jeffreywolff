@@ -315,18 +315,30 @@ public class main {
 		return height;
 	}
 
+	/**
+	 *  A method that converts kilometer per hour to meter per second.
+	 * @param kMpH - Data for Kilometers per hour -
+	 * @return velocity in meter per second
+	 */
 	public static double kMpHConvert(double kMpH) {
 		double velocityMpS = kMpH / 3.6;
 		return velocityMpS;
 
 	}
 
+	/**
+	 *  A method that calculates the acceleration from velocity divided by time.
+	 * @param velocityMpS - Data of Velocity in meter per second -
+	 * @param time - Data of Time -
+	 * @return acceleration
+	 */
 	public static double acceleration(double velocityMpS, double time) {
 		double acceleration = velocityMpS / time;
 		return acceleration;
 
 	}
 
+	
 	public static double force(double acceleration, double mass) {
 		double force = acceleration * mass;
 		return force;
