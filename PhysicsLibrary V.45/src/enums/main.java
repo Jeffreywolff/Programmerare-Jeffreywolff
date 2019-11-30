@@ -380,12 +380,24 @@ public class main {
 		return bounceCount;
 	}
 	
+	/**
+	 *  A method Calculating the force from a springconstant divided by the lenght of the spring while extended.
+	 * @param springConstant - Data of spring constant -
+	 * @param lenght - Data of Lenght -
+	 * @return The force the spring us pulling.
+	 */
 	public static double hookesLaw(double springConstant, double lenght) {
 		//Force(F) = k / lenght(x)
 		double force = springConstant / lenght;
 		return force;	
 	}
 	
+	/**
+	 * A method calculating the lenght a spring is exdended by dividing the force divided by spring constant.
+	 * @param force - Data of force -
+	 * @param springConstant - Data of the spring constant -
+	 * @return The lenght of a spring while extended.
+	 */
 	public static double hookesLawLenght(double force, double springConstant) {
 		//lenght = Force(F) / k
 		double lenght = force / springConstant;
