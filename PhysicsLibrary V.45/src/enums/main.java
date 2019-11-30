@@ -55,7 +55,7 @@ public class main {
 		// 8. A 13 kg weight is hanging on a spring, which has t a constant factor
 		// characteristic of the springs stiffness 96N/m. How far the spring is
 		// extended?
-		System.out.println(hookeslaw());
+		System.out.println(hookesLawLenght(force(g_swe, 13), 96));
 	}
 
 	/**
@@ -344,10 +344,15 @@ public class main {
 		return bounceCount;
 	}
 	
-	public static double hookeslaw(double constant, double lenght) {
+	public static double hookesLaw(double springConstant, double lenght) {
 		//Force(F) = k / lenght(x)
-		double force = constant / lenght;
-		return force;
-		
+		double force = springConstant / lenght;
+		return force;	
+	}
+	
+	public static double hookesLawLenght(double force, double springConstant) {
+		//lenght = Force(F) / k
+		double lenght = force / springConstant;
+		return lenght;
 	}
 }
