@@ -52,6 +52,10 @@ public class main {
 		// every time it touches the ground it loses 1% of its energy. How many times
 		// will the ball bounce in the ground before bouncing no more than 0.5 meters?
 		System.out.println(bounceCount(12, 1));
+		// 8. A 13 kg weight is hanging on a spring, which has t a constant factor
+		// characteristic of the springs stiffness 96N/m. How far the spring is
+		// extended?
+		System.out.println(hookeslaw());
 	}
 
 	/**
@@ -325,19 +329,25 @@ public class main {
 		double distance = (acceleration * Math.pow(time, 2)) / 2;
 		return distance;
 	}
-	
+
 	public static double bounceCount(double height, double mass) {
 		double potentialEnergy = mass * g_swe * height;
 		int bounceCount = 0;
 		double i = height;
-		
-		while(i>=0.5) {
+
+		while (i >= 0.5) {
 			potentialEnergy *= 0.99;
 			i = potentialEnergy / g_swe;
 			bounceCount++;
 		}
-		
+
 		return bounceCount;
 	}
-
+	
+	public static double hookeslaw(double constant, double lenght) {
+		//Force(F) = k / lenght(x)
+		double force = constant / lenght;
+		return force;
+		
+	}
 }
