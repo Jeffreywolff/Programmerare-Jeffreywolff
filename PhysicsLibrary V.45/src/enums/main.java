@@ -315,6 +315,10 @@ public class main {
 		return height;
 	}
 
+	//
+	// Here are my own methods:
+	//
+	
 	/**
 	 *  A method that converts kilometer per hour to meter per second.
 	 * @param kMpH - Data for Kilometers per hour -
