@@ -51,7 +51,7 @@ public class main {
 		// 7. A bouncing ball weighing 1kg is released from a height of 12 meters and
 		// every time it touches the ground it loses 1% of its energy. How many times
 		// will the ball bounce in the ground before bouncing no more than 0.5 meters?
-		System.out.println();
+		System.out.println(bounceCount(12, 1));
 	}
 
 	/**
