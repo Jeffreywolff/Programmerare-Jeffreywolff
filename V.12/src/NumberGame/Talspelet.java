@@ -14,7 +14,12 @@ public class Talspelet {
 
     public static void startTalSpelet() {
         Scanner scan = new Scanner(System.in);
+
         int numbersOfPlayers = 0;
+        boolean isMultiPlayerTrue = false;
+        int levelOfDifficulty = 0;
+
+
         System.out.println("Welcome to Talspelet! \n");
         gameRules();
         System.out.printf("How many players do you want to play as? \n" +
@@ -32,15 +37,34 @@ public class Talspelet {
             catch(Exception InputMismatchException){
                     System.out.println("Invalid input, try again!");
                     scan.next();
-                    continue;
                 }
         }
 
         if (numbersOfPlayers == 1){
-            singlePlayerGameMode();
+            System.out.println("Singleplayer is chosen!");
         }
         else if (numbersOfPlayers == 2){
-            multiPlayerGameMode();
+            isMultiPlayerTrue = true;
+            System.out.println("Multiplayer is chosen!");
+        }
+
+        System.out.printf("Now choose a level of difficulty: \n" +
+                "1) Easy \n" +
+                "2) Medium \n" +
+                "3) Hard \n"
+        );
+        while (true) {
+            System.out.println("Enter a number, either 1, 2 or 3: ");
+            try {
+                levelOfDifficulty = scan.nextInt();
+                if (levelOfDifficulty == 1 || levelOfDifficulty == 2 || levelOfDifficulty == 3) {
+                    break;
+                }
+            }
+            catch(Exception InputMismatchException){
+                System.out.println("You´re probably out of your mind or you just typed it wrong, try again!");
+                scan.next();
+            }
         }
 
 
@@ -64,11 +88,11 @@ public class Talspelet {
         }
 
         private static void singlePlayerGameMode(){
-            System.out.println("Singleplayer mode chosen!");
+
         }
 
         private static void multiPlayerGameMode(){
-            System.out.println("Multiplayer mode chosen!");
+
         }
 
         private static void EasyGameMode(){
