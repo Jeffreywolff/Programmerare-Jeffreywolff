@@ -18,33 +18,35 @@ public class Talspelet {
         System.out.println("Welcome to Talspelet! \n");
         gameRules();
         System.out.printf("How many players do you want to play as? \n" +
-                "1) Singleplayer. \n" +
-                "2) Multiplayer. \n");
+                "1) Singleplayer \n" +
+                "2) Multiplayer \n");
 
-
-
-            while(true) {
-                System.out.println("Enter a number, either 1 or 2: ");
-                try {
-                    //nextInt will throw InputMismatchException
-                    //if the next token does not match the Integer
-                    //regular expression, or is out of range
-                    numbersOfPlayers = scan.nextInt();
-                } catch (InputMismatchException exception) {
-                    //Print "This is not an integer"
-                    //when user put other than integer
-                    System.out.println("WRONG!");
-                }
-
-
-                if (numbersOfPlayers == 1) {
-                    System.out.println("Singleplayer mode chosen!");
-                    singlePlayerGame();
-                } else if (numbersOfPlayers == 2) {
-                    System.out.println("Multiplayer mode chosen!");
-                    multiPLayerGame();
+        while (true) {
+            System.out.println("Enter a number, either 1 or 2: ");
+            try {
+                numbersOfPlayers = scan.nextInt();
+                if (numbersOfPlayers == 1 || numbersOfPlayers == 2) {
+                    break;
                 }
             }
+            catch(Exception InputMismatchException){
+                    System.out.println("Invalid input, try again!");
+                    scan.next();
+                    continue;
+                }
+        }
+
+        if (numbersOfPlayers == 1){
+            singlePlayerGameMode();
+        }
+        else if (numbersOfPlayers == 2){
+            multiPlayerGameMode();
+        }
+
+
+
+
+
 
     }
 
@@ -61,12 +63,24 @@ public class Talspelet {
                     "Enjoy and try to guess right! \n \n \n ");
         }
 
-        private static void singlePlayerGame(){
-
+        private static void singlePlayerGameMode(){
+            System.out.println("Singleplayer mode chosen!");
         }
 
-        private static void multiPLayerGame(){
+        private static void multiPlayerGameMode(){
+            System.out.println("Multiplayer mode chosen!");
+        }
 
+        private static void EasyGameMode(){
+            System.out.println("Easy gamemode chosen!");
+        }
+
+        private static void MediumGameMode(){
+            System.out.println("Easy gamemode chosen!");
+        }
+
+        private static void HardGameMode(){
+            System.out.println("Easy gamemode chosen!");
         }
 
 
