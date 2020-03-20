@@ -9,7 +9,7 @@ public class Talspelet {
     static Scanner scan = new Scanner(System.in);
     static Random random = new Random();
     static int correctAnswer = 0;
-    static int player1Answer;
+    static int playerAnswer;
     static int player1GuessCounter = 0;
     static int player2GuessCounter = 0;
     static int numbersOfPlayers = 0;
@@ -17,25 +17,22 @@ public class Talspelet {
     static int levelOfDifficulty = 0;
     static int hardModeMaxGuesses = 5;
     static int getInteger;
+    static int playerNumber = 0;
 
 
 
     public static void main(String[] args) {
-        //getIntegerInput();
         startTalSpelet();
     }
 
     public static void startTalSpelet() {
 
-
-
-
-
         System.out.println("Welcome to Talspelet! \n");
         gameRules();
-        System.out.printf("How many players do you want to play as? \n" +
+        System.out.println("How many players do you want to play as? \n" +
                 "1) Singleplayer \n" +
                 "2) Multiplayer \n");
+
 
         while (true) {
             System.out.println("Enter a number, either 1 or 2: ");
@@ -60,7 +57,7 @@ public class Talspelet {
             System.out.println("Multiplayer is chosen!");
         }
 
-        System.out.printf("Now choose a level of difficulty: \n" +
+        System.out.println("Now choose a level of difficulty: \n" +
                 "1) Easy \n" +
                 "2) Normal \n" +
                 "3) Hard \n"
@@ -112,7 +109,7 @@ public class Talspelet {
         }
 
         private static void gameRules(){
-            System.out.printf("This is a game where you try to guess a number, a secret number. \n" +
+            System.out.println("This is a game where you try to guess a number, a secret number. \n" +
                     "But you can only type in whole numbers from a certain range! \n" +
                     "You will be given the opportunity to either play the game with someone else or alone. \n" +
                     "And you will be given 3 options to play, either 1, 2 or 3. \n" +
@@ -124,47 +121,65 @@ public class Talspelet {
         }
 
         private static void hardSingleplayerGuessAlgorithm(){
-            while (player1Answer != correctAnswer){
+            while (playerAnswer != correctAnswer){
                 System.out.println("Enter a number: ");
-                player1Answer = getIntegerInput();
+                playerAnswer = getIntegerInput();
                 player1GuessCounter++;
 
                 if (player1GuessCounter == hardModeMaxGuesses){
                     System.out.println("You have exceeded you guess limit! You lose!");
                     break;
                 }
-                else if (player1Answer > correctAnswer){
-                    System.out.println("To high, try a smaller number! ");
-                }
-                else if (player1Answer < correctAnswer){
-                    System.out.println("To low, try a greater number! ");
-                }
+                playerClue(playerAnswer);
+
             }
-            if (player1Answer == correctAnswer){
+
+            if (playerAnswer == correctAnswer){
                 System.out.println("You have guessed the right number!");
                 System.out.println("It took you " + player1GuessCounter + " guesses! \n");
+                System.out.println("The correct number was " + correctAnswer + "!");
             }
         }
 
         private static void easyOrNormalSinglePlayerGuessAlgorithm(){
-            while (player1Answer != correctAnswer){
+            while (playerAnswer != correctAnswer){
                 System.out.println("Enter a number: ");
-                player1Answer = getIntegerInput();
+                playerAnswer = getIntegerInput();
                 player1GuessCounter++;
-
-                if (player1Answer > correctAnswer){
-                    System.out.println("To high, try a smaller number! ");
-                }
-                else if (player1Answer < correctAnswer){
-                    System.out.println("To low, try a greater number! ");
-                }
+                playerClue(playerAnswer);
             }
+
             System.out.println("You have guessed the right number!");
             System.out.println("It took you " + player1GuessCounter + " guesses! \n");
         }
 
         private static void easyOrNormalMultiPlayerGuessAlgorithm(){
+            while(playerAnswer != correctAnswer){
+                playerNumber++;
+                if (playerNumber > 2){
+                    playerNumber = 1;
+                }
+                System.out.println("Enter a number player " + playerNumber + ": ");
+                playerAnswer = getIntegerInput();
+                if (playerNumber % 2 == 0){
+                    player2GuessCounter++;
+                }
 
+                else{
+                    player1GuessCounter++;
+                }
+
+                playerClue(playerAnswer);
+            }
+            System.out.println("Player " + playerNumber + " won!");
+                if (playerAnswer == correctAnswer){
+                    if (playerNumber % 2 == 0){
+                        System.out.println("You guessed a total of " + player2GuessCounter + " times!");
+                    }
+                    else if (playerNumber % 2 != 0){
+                        System.out.println("You guessed a total of " + player1GuessCounter + " times!");
+                    }
+                }
         }
 
         private static void singlePlayerGameMode(){
@@ -179,11 +194,12 @@ public class Talspelet {
 
         private static void multiPlayerGameMode(){
             if (levelOfDifficulty != 3){
-
+                easyOrNormalMultiPlayerGuessAlgorithm();
             }
             else{
-
+                //hardMultiplayerGuessAlgorithm();
             }
+            runGameAgain();
         }
 
         private static void randomizedNumberGenerator(){
@@ -214,6 +230,15 @@ public class Talspelet {
             System.out.println(correctAnswer);
             System.out.println("Hard gamemode has been chosen!");
             checkMultiPlayer();
+        }
+
+        private static void playerClue(int playerAnswer){
+            if (playerAnswer > correctAnswer){
+                System.out.println("To high, try a smaller number! ");
+            }
+            else if (playerAnswer < correctAnswer){
+                System.out.println("To low, try a greater number! ");
+            }
         }
 
         private static int getIntegerInput(){
