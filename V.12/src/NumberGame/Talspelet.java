@@ -1,9 +1,18 @@
 package NumberGame;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Talspelet {
+
+    static Scanner scan = new Scanner(System.in);
+    static Random random = new Random();
+    static int correctAnswer = 0;
+    static int userGuessCounter = 0;
+    static int numbersOfPlayers = 0;
+    static boolean isMultiPlayerTrue = false;
+    static int levelOfDifficulty = 0;
 
 
 
@@ -13,11 +22,9 @@ public class Talspelet {
     }
 
     public static void startTalSpelet() {
-        Scanner scan = new Scanner(System.in);
 
-        int numbersOfPlayers = 0;
-        boolean isMultiPlayerTrue = false;
-        int levelOfDifficulty = 0;
+
+
 
 
         System.out.println("Welcome to Talspelet! \n");
@@ -42,6 +49,7 @@ public class Talspelet {
 
         if (numbersOfPlayers == 1){
             System.out.println("Singleplayer is chosen!");
+
         }
         else if (numbersOfPlayers == 2){
             isMultiPlayerTrue = true;
@@ -62,10 +70,13 @@ public class Talspelet {
                 }
             }
             catch(Exception InputMismatchException){
-                System.out.println("You´re probably out of your mind or you just typed it wrong, try again!");
+                System.out.println("You´re probably out of your mind or you've just typed it wrong, try again!");
                 scan.next();
             }
         }
+        randomizedNumberGenerator();
+        checkDifficulty();
+
 
 
 
@@ -74,6 +85,27 @@ public class Talspelet {
 
     }
 
+
+        private static void checkDifficulty(){
+            if (levelOfDifficulty == 1){
+                easyGameMode();
+            }
+            else if (levelOfDifficulty == 2){
+                normalGameMode();
+            }
+            else if (levelOfDifficulty == 3){
+                hardGameMode();
+            }
+        }
+
+        private static void checkMultiPlayer(){
+            if (isMultiPlayerTrue){
+                multiPlayerGameMode();
+            }
+            else{
+                singlePlayerGameMode();
+            }
+        }
 
         private static void gameRules(){
             System.out.printf("This is a game where you try to guess a number, a secret number. \n" +
@@ -94,17 +126,34 @@ public class Talspelet {
         private static void multiPlayerGameMode(){
 
         }
-
-        private static void EasyGameMode(){
-            System.out.println("Easy gamemode chosen!");
+        private static void randomizedNumberGenerator(){
+            if (levelOfDifficulty == 1){
+                correctAnswer = random.nextInt(11);
+            }
+            else if (levelOfDifficulty == 2){
+                correctAnswer = random.nextInt(101);
+            }
+            else if (levelOfDifficulty == 3){
+                correctAnswer = random.nextInt(501);
+            }
         }
 
-        private static void MediumGameMode(){
+        private static void easyGameMode(){
+            System.out.println(correctAnswer);
             System.out.println("Easy gamemode chosen!");
+            checkMultiPlayer();
         }
 
-        private static void HardGameMode(){
-            System.out.println("Easy gamemode chosen!");
+        private static void normalGameMode(){
+            System.out.println(correctAnswer);
+            System.out.println("Normal gamemode chosen!");
+            checkMultiPlayer();
+        }
+
+        private static void hardGameMode(){
+            System.out.println(correctAnswer);
+            System.out.println("Hard gamemode chosen!");
+            checkMultiPlayer();
         }
 
 
