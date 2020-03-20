@@ -16,11 +16,12 @@ public class Talspelet {
     static boolean isMultiPlayerTrue = false;
     static int levelOfDifficulty = 0;
     static int hardModeMaxGuesses = 5;
+    static int getInteger;
 
 
 
     public static void main(String[] args) {
-
+        //getIntegerInput();
         startTalSpelet();
     }
 
@@ -125,7 +126,7 @@ public class Talspelet {
         private static void hardSingleplayerGuessAlgorithm(){
             while (player1Answer != correctAnswer){
                 System.out.println("Enter a number: ");
-                player1Answer = scan.nextInt();
+                player1Answer = getIntegerInput();
                 player1GuessCounter++;
 
                 if (player1GuessCounter == hardModeMaxGuesses){
@@ -148,7 +149,7 @@ public class Talspelet {
         private static void easyOrNormalSinglePlayerGuessAlgorithm(){
             while (player1Answer != correctAnswer){
                 System.out.println("Enter a number: ");
-                player1Answer = scan.nextInt();
+                player1Answer = getIntegerInput();
                 player1GuessCounter++;
 
                 if (player1Answer > correctAnswer){
@@ -162,6 +163,10 @@ public class Talspelet {
             System.out.println("It took you " + player1GuessCounter + " guesses! \n");
         }
 
+        private static void easyOrNormalMultiPlayerGuessAlgorithm(){
+
+        }
+
         private static void singlePlayerGameMode(){
             if (levelOfDifficulty != 3){
                 easyOrNormalSinglePlayerGuessAlgorithm();
@@ -173,7 +178,12 @@ public class Talspelet {
         }
 
         private static void multiPlayerGameMode(){
+            if (levelOfDifficulty != 3){
 
+            }
+            else{
+
+            }
         }
 
         private static void randomizedNumberGenerator(){
@@ -206,10 +216,24 @@ public class Talspelet {
             checkMultiPlayer();
         }
 
+        private static int getIntegerInput(){
+            while(true) {
+                try {
+                    getInteger = scan.nextInt();
+                    break;
+                    }
+                    catch (Exception InputMismatchException) {
+                    System.out.println("That's an invalid input, please try again!");
+                    scan.next();
+                }
+            }
+            return getInteger;
+        }
+
         private static void runGameAgain(){
             System.out.println("Do you want to play again? \n 1) Yes \n 2) No ");
             System.out.println("Enter a number: ");
-            int doPlayerPlayAgain = scan.nextInt();
+            int doPlayerPlayAgain = getIntegerInput();
             switch (doPlayerPlayAgain){
                 case 1:
                     System.out.println("Sure thing!");
