@@ -15,6 +15,7 @@ public class Talspelet {
     static int numbersOfPlayers = 0;
     static boolean isMultiPlayerTrue = false;
     static int levelOfDifficulty = 0;
+    static int hardModeMaxGuesses = 5;
 
 
 
@@ -60,7 +61,7 @@ public class Talspelet {
 
         System.out.printf("Now choose a level of difficulty: \n" +
                 "1) Easy \n" +
-                "2) Medium \n" +
+                "2) Normal \n" +
                 "3) Hard \n"
         );
         while (true) {
@@ -115,17 +116,41 @@ public class Talspelet {
                     "You will be given the opportunity to either play the game with someone else or alone. \n" +
                     "And you will be given 3 options to play, either 1, 2 or 3. \n" +
                     "Option 1, Difficulty: Easy, and the range of numbers is from 1-10 with unlimited guessing. \n" +
-                    "Option 2, Difficulty: Medium, where the range is from 1-100, also with unlimited guessing.\n" +
+                    "Option 2, Difficulty: Normal, where the range is from 1-100, also with unlimited guessing.\n" +
                     "And for last, Option 3, Difficulty: HARD, where the range of numbers is from 1-500 \n" +
                     "and you only got 5 guesses to get the right answer! \n" +
-                    "Enjoy and try to guess right! \n \n \n ");
+                    "Enjoy and try to guess the right number! \n \n \n ");
         }
 
-        private static void singlePlayerGameMode(){
+        private static void hardSingleplayerGuessAlgorithm(){
             while (player1Answer != correctAnswer){
                 System.out.println("Enter a number: ");
                 player1Answer = scan.nextInt();
                 player1GuessCounter++;
+
+                if (player1GuessCounter == hardModeMaxGuesses){
+                    System.out.println("You have exceeded you guess limit! You lose!");
+                    break;
+                }
+                else if (player1Answer > correctAnswer){
+                    System.out.println("To high, try a smaller number! ");
+                }
+                else if (player1Answer < correctAnswer){
+                    System.out.println("To low, try a greater number! ");
+                }
+            }
+            if (player1Answer == correctAnswer){
+                System.out.println("You have guessed the right number!");
+                System.out.println("It took you " + player1GuessCounter + " guesses! \n");
+            }
+        }
+
+        private static void easyOrNormalSinglePlayerGuessAlgorithm(){
+            while (player1Answer != correctAnswer){
+                System.out.println("Enter a number: ");
+                player1Answer = scan.nextInt();
+                player1GuessCounter++;
+
                 if (player1Answer > correctAnswer){
                     System.out.println("To high, try a smaller number! ");
                 }
@@ -135,12 +160,22 @@ public class Talspelet {
             }
             System.out.println("You have guessed the right number!");
             System.out.println("It took you " + player1GuessCounter + " guesses! \n");
+        }
+
+        private static void singlePlayerGameMode(){
+            if (levelOfDifficulty != 3){
+                easyOrNormalSinglePlayerGuessAlgorithm();
+            }
+            else{
+                hardSingleplayerGuessAlgorithm();
+            }
             runGameAgain();
         }
 
         private static void multiPlayerGameMode(){
 
         }
+
         private static void randomizedNumberGenerator(){
             if (levelOfDifficulty == 1){
                 correctAnswer = random.nextInt(11);
@@ -155,19 +190,19 @@ public class Talspelet {
 
         private static void easyGameMode(){
             System.out.println(correctAnswer);
-            System.out.println("Easy gamemode chosen!");
+            System.out.println("Easy gamemode has been chosen!");
             checkMultiPlayer();
         }
 
         private static void normalGameMode(){
             System.out.println(correctAnswer);
-            System.out.println("Normal gamemode chosen!");
+            System.out.println("Normal gamemode has been chosen!");
             checkMultiPlayer();
         }
 
         private static void hardGameMode(){
             System.out.println(correctAnswer);
-            System.out.println("Hard gamemode chosen!");
+            System.out.println("Hard gamemode has been chosen!");
             checkMultiPlayer();
         }
 
