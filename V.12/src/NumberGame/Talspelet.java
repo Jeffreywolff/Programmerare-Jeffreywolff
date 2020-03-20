@@ -9,7 +9,9 @@ public class Talspelet {
     static Scanner scan = new Scanner(System.in);
     static Random random = new Random();
     static int correctAnswer = 0;
-    static int userGuessCounter = 0;
+    static int player1Answer;
+    static int player1GuessCounter = 0;
+    static int player2GuessCounter = 0;
     static int numbersOfPlayers = 0;
     static boolean isMultiPlayerTrue = false;
     static int levelOfDifficulty = 0;
@@ -120,7 +122,20 @@ public class Talspelet {
         }
 
         private static void singlePlayerGameMode(){
-
+            while (player1Answer != correctAnswer){
+                System.out.println("Enter a number: ");
+                player1Answer = scan.nextInt();
+                player1GuessCounter++;
+                if (player1Answer > correctAnswer){
+                    System.out.println("To high, try a smaller number! ");
+                }
+                else if (player1Answer < correctAnswer){
+                    System.out.println("To low, try a greater number! ");
+                }
+            }
+            System.out.println("You have guessed the right number!");
+            System.out.println("It took you " + player1GuessCounter + " guesses! \n");
+            runGameAgain();
         }
 
         private static void multiPlayerGameMode(){
@@ -156,7 +171,19 @@ public class Talspelet {
             checkMultiPlayer();
         }
 
-
+        private static void runGameAgain(){
+            System.out.println("Do you want to play again? \n 1) Yes \n 2) No ");
+            System.out.println("Enter a number: ");
+            int doPlayerPlayAgain = scan.nextInt();
+            switch (doPlayerPlayAgain){
+                case 1:
+                    System.out.println("Sure thing!");
+                    startTalSpelet();
+                case 2:
+                    System.out.println("See you!");
+                    break;
+            }
+        }
 
 
 }
