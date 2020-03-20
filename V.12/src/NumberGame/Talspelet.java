@@ -239,19 +239,16 @@ public class Talspelet {
         }
 
         private static void easyGameMode(){
-            System.out.println(correctAnswer);
             System.out.println("Easy gamemode has been chosen!");
             checkMultiPlayer();
         }
 
         private static void normalGameMode(){
-            System.out.println(correctAnswer);
             System.out.println("Normal gamemode has been chosen!");
             checkMultiPlayer();
         }
 
         private static void hardGameMode(){
-            System.out.println(correctAnswer);
             System.out.println("Hard gamemode has been chosen!");
             checkMultiPlayer();
         }
