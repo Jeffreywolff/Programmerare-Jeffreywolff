@@ -17,7 +17,7 @@ public class Talspelet {
     static int levelOfDifficulty = 0;
     static int hardModeMaxGuesses = 5;
     static int getInteger;
-    static int playerNumber = 0;
+    static int playerNumber;
 
 
 
@@ -33,56 +33,38 @@ public class Talspelet {
                 "1) Singleplayer \n" +
                 "2) Multiplayer \n");
 
-
-        while (true) {
-            System.out.println("Enter a number, either 1 or 2: ");
-            try {
-                numbersOfPlayers = scan.nextInt();
-                if (numbersOfPlayers == 1 || numbersOfPlayers == 2) {
-                    break;
-                }
+        while(true) {
+            if (numbersOfPlayers == 1 || numbersOfPlayers == 2){
+                break;
             }
-            catch(Exception InputMismatchException){
-                    System.out.println("Invalid input, try again!");
-                    scan.next();
-                }
+            System.out.println("Enter a number, 1 or 2: ");
+            numbersOfPlayers = getIntegerInput();
         }
 
-        if (numbersOfPlayers == 1){
-            System.out.println("Singleplayer is chosen!");
-
-        }
-        else if (numbersOfPlayers == 2){
+        if (numbersOfPlayers == 2){
             isMultiPlayerTrue = true;
             System.out.println("Multiplayer is chosen!");
         }
+
+        System.out.println("Singleplayer is chosen!");
 
         System.out.println("Now choose a level of difficulty: \n" +
                 "1) Easy \n" +
                 "2) Normal \n" +
                 "3) Hard \n"
         );
+
         while (true) {
             System.out.println("Enter a number, either 1, 2 or 3: ");
-            try {
-                levelOfDifficulty = scan.nextInt();
+
+                levelOfDifficulty = getIntegerInput();
                 if (levelOfDifficulty == 1 || levelOfDifficulty == 2 || levelOfDifficulty == 3) {
                     break;
                 }
-            }
-            catch(Exception InputMismatchException){
-                System.out.println("You´re probably out of your mind or you've just typed it wrong, try again!");
-                scan.next();
-            }
         }
+
         randomizedNumberGenerator();
         checkDifficulty();
-
-
-
-
-
-
 
     }
 
@@ -154,6 +136,7 @@ public class Talspelet {
         }
 
         private static void easyOrNormalMultiPlayerGuessAlgorithm(){
+            playerNumber = 0;
             while(playerAnswer != correctAnswer){
                 playerNumber++;
                 if (playerNumber > 2){
@@ -182,6 +165,47 @@ public class Talspelet {
                 }
         }
 
+        private static void hardMultiplayerGuessAlgorithm(){
+            playerNumber = 0;
+            while(playerAnswer != correctAnswer){
+                playerNumber++;
+                if (playerNumber > 2){
+                    playerNumber = 1;
+                }
+                if (player1GuessCounter == hardModeMaxGuesses){
+                    System.out.println("Player 1 is out of guesses!");
+                }
+                if(player2GuessCounter == hardModeMaxGuesses){
+                    System.out.println("Player 2 is out of guesses!");
+                    break;
+                }
+                System.out.println("Enter a number player " + playerNumber + ": ");
+                playerAnswer = getIntegerInput();
+                if (playerNumber % 2 == 0){
+                    player2GuessCounter++;
+                }
+
+                else{
+                    player1GuessCounter++;
+                }
+
+                playerClue(playerAnswer);
+            }
+
+            if (playerAnswer == correctAnswer){
+                System.out.println("Player " + playerNumber + " won!");
+                if (playerNumber % 2 == 0){
+                    System.out.println("You guessed a total of " + player2GuessCounter + " times!");
+                }
+                else if (playerNumber % 2 != 0){
+                    System.out.println("You guessed a total of " + player1GuessCounter + " times!");
+                }
+                else{
+                    System.out.println("None of you won!");
+                }
+            }
+        }
+
         private static void singlePlayerGameMode(){
             if (levelOfDifficulty != 3){
                 easyOrNormalSinglePlayerGuessAlgorithm();
@@ -197,7 +221,7 @@ public class Talspelet {
                 easyOrNormalMultiPlayerGuessAlgorithm();
             }
             else{
-                //hardMultiplayerGuessAlgorithm();
+                hardMultiplayerGuessAlgorithm();
             }
             runGameAgain();
         }
