@@ -12,7 +12,7 @@ public class Talspelet {
     static int playerAnswer;
     static int player1GuessCounter = 0;
     static int player2GuessCounter = 0;
-    static int numbersOfPlayers = 0;
+    static int numbersOfPlayers;
     static boolean isMultiPlayerTrue = false;
     static int levelOfDifficulty = 0;
     static int hardModeMaxGuesses = 5;
@@ -26,7 +26,6 @@ public class Talspelet {
     }
 
     public static void startTalSpelet() {
-
         System.out.println("Welcome to Talspelet! \n");
         gameRules();
         System.out.println("How many players do you want to play as? \n" +
@@ -34,11 +33,11 @@ public class Talspelet {
                 "2) Multiplayer \n");
 
         while(true) {
+            System.out.println("Enter a number, 1 or 2: ");
+            numbersOfPlayers = getIntegerInput();
             if (numbersOfPlayers == 1 || numbersOfPlayers == 2){
                 break;
             }
-            System.out.println("Enter a number, 1 or 2: ");
-            numbersOfPlayers = getIntegerInput();
         }
 
         if (numbersOfPlayers == 2){
