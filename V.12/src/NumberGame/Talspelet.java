@@ -307,6 +307,11 @@ public class Talspelet {
         }
     }
 
+    /**
+     * A method that check if the input a player does is an integer. If it is not an integer it prints a error message
+     * and tells the player to try again.
+     * @return it returns a Integer value of what the player typed.
+     */
     private static int getIntegerInput(){
         while(true) {
             try {
@@ -321,6 +326,9 @@ public class Talspelet {
         return getInteger;
     }
 
+    /**
+     *
+     */
     private static void runGameAgain(){
         System.out.println("Do you want to play again? \n 1) Yes \n 2) No ");
         System.out.println("Enter a number: ");
