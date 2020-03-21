@@ -6,18 +6,18 @@ import java.util.Scanner;
 
 public class Talspelet {
 
-    static Scanner scan = new Scanner(System.in);
-    static Random random = new Random();
-    static int correctAnswer = 0;
-    static int playerAnswer;
-    static int player1GuessCounter = 0;
-    static int player2GuessCounter = 0;
-    static int numbersOfPlayers;
-    static boolean isMultiPlayerTrue = false;
-    static int levelOfDifficulty = 0;
-    static int hardModeMaxGuesses = 5;
-    static int getInteger;
-    static int playerNumber;
+    static Scanner scan = new Scanner(System.in); // To read the players input
+    static Random random = new Random(); // To randomize a number
+    static int correctAnswer = 0; // base for correct answer
+    static int playerAnswer; // What the player types
+    static int player1GuessCounter = 0; // Counts player 1 guesses
+    static int player2GuessCounter = 0; // Counts player 2 guesses
+    static int numbersOfPlayers; // Keeps the value of how many players that will play
+    static boolean isMultiPlayerTrue = false; // A boolean that tells if the player wants to play multiplayer
+    static int levelOfDifficulty = 0; // Keeps a integer of the level of difficulty
+    static int hardModeMaxGuesses = 5; // Max guesses for hard mode, Easily changeable
+    static int getInteger; // A placeholder for player inputs
+    static int playerNumber; // A counter that adds 1 when a round is finished.
 
 
 
