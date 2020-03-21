@@ -136,6 +136,9 @@ public class Talspelet {
         }
     }
 
+    /**
+     * This method counts guesses and loop until you get the answer right.
+     */
     private static void easyOrNormalSinglePlayerGuessAlgorithm(){
         while (playerAnswer != correctAnswer){
             System.out.println("Enter a number: ");
