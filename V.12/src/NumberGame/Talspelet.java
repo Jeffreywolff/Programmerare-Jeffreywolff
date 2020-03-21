@@ -99,6 +99,9 @@ public class Talspelet {
         }
     }
 
+    /**
+     * Prints all game rules for the player to understand the game.
+     */
     private static void gameRules(){
         System.out.println("This is a game where you try to guess a number, a secret number. \n" +
                 "But you can only type in whole numbers from a certain range! \n" +
@@ -111,6 +114,10 @@ public class Talspelet {
                 "Enjoy and try to guess the right number! \n \n \n ");
     }
 
+    /**
+     * This method  checks how many guesses the player has done.
+     * And if it exceeds a certain number it will stop the method and continue elsewhere.
+     */
     private static void hardSingleplayerGuessAlgorithm(){
         while (playerAnswer != correctAnswer){
             System.out.println("Enter a number: ");
