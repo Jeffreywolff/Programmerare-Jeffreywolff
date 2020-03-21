@@ -37,16 +37,16 @@ public class Talspelet {
                 "1) Singleplayer \n" +
                 "2) Multiplayer \n");
 
-        while(true) {
+        while(true) {   //Loops until a valid answer is given
             System.out.println("Enter a number, 1 or 2: ");
             numbersOfPlayers = getIntegerInput();
             if (numbersOfPlayers == 1 || numbersOfPlayers == 2){
-                break;
+                break; // breaks the loop if the statement is true
             }
         }
 
         if (numbersOfPlayers == 2){
-            isMultiPlayerTrue = true;
+            isMultiPlayerTrue = true; // Makes the multiplayer variable true.
             System.out.println("Multiplayer is chosen!");
         }
 
@@ -61,13 +61,13 @@ public class Talspelet {
         while (true) {
             System.out.println("Enter a number, either 1, 2 or 3: ");
 
-                levelOfDifficulty = getIntegerInput();
+                levelOfDifficulty = getIntegerInput(); // Calls the a method to make sure the input is an integer.
                 if (levelOfDifficulty == 1 || levelOfDifficulty == 2 || levelOfDifficulty == 3) {
-                    break;
+                    break; // Breaks the loop if the statement is true
                 }
         }
 
-        randomizedNumberGenerator();
+        randomizedNumberGenerator(); // starts randomizing the correct answer depending on the chosen level of difficulty
         checkDifficulty();
 
     }
