@@ -268,6 +268,7 @@ public class Talspelet {
     }
 
     /**
+     * Tells the player what gamemode has been chosen
      *  Calls for another method.
      */
     private static void easyGameMode(){
@@ -275,11 +276,19 @@ public class Talspelet {
         checkMultiPlayer();
     }
 
+    /**
+     * Tells the player what gamemode has been chosen
+     * Calls for another method.
+     */
     private static void normalGameMode(){
         System.out.println("Normal gamemode has been chosen!");
         checkMultiPlayer();
     }
 
+    /**
+     * Tells the player what gamemode has been chosen
+     * Calls for another method.
+     */
     private static void hardGameMode(){
         System.out.println("Hard gamemode has been chosen!");
         checkMultiPlayer();
