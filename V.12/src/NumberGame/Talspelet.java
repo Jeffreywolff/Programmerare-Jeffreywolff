@@ -150,6 +150,9 @@ public class Talspelet {
         System.out.println("It took you " + player1GuessCounter + " guesses! \n");
     }
 
+    /**
+     * This method counts guesses for each player and makes sure the right player plays the turn. Unlimited guesses.
+     */
     private static void easyOrNormalMultiPlayerGuessAlgorithm(){
         playerNumber = 0;
         while(playerAnswer != correctAnswer){
@@ -178,6 +181,11 @@ public class Talspelet {
         }
     }
 
+    /**
+     * This method counts guesses, but if it exceeds the max amount of guesses, the next player that hasn't exceeded
+     * it's guessing gets to play. If both exceeds the max amount of guesses, the method will break and the program will
+     * continue elsewhere
+     */
     private static void hardMultiplayerGuessAlgorithm(){
         playerNumber = 0;
         while(playerAnswer != correctAnswer){
