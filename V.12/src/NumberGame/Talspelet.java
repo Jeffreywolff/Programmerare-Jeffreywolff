@@ -294,6 +294,10 @@ public class Talspelet {
         checkMultiPlayer();
     }
 
+    /**
+     * This method gives the players a clue depending on the answer.
+     * @param playerAnswer The player answer, used to check if it is to low or to high.
+     */
     private static void playerClue(int playerAnswer){
         if (playerAnswer > correctAnswer){
             System.out.println("To high, try a smaller number! ");
