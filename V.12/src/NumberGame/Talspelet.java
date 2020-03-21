@@ -327,7 +327,8 @@ public class Talspelet {
     }
 
     /**
-     *
+     * Asks the player if he or she wants to play again. If yes it will call the startTalSpelet() method.
+     * If No, the program will exit.
      */
     private static void runGameAgain(){
         System.out.println("Do you want to play again? \n 1) Yes \n 2) No ");
