@@ -87,6 +87,9 @@ public class Talspelet {
         }
     }
 
+    /**
+     * A method that checks if the player choose multiplayer or singleplayer and calls the responding method.
+     */
     private static void checkMultiPlayer(){
         if (isMultiPlayerTrue){
             multiPlayerGameMode();
