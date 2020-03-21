@@ -224,6 +224,10 @@ public class Talspelet {
         }
     }
 
+    /**
+     * This method checks what difficulty the player has chosen and calls the method with the right
+     * algorithm for the difficulty.
+     */
     private static void singlePlayerGameMode(){
         if (levelOfDifficulty != 3){
             easyOrNormalSinglePlayerGuessAlgorithm();
