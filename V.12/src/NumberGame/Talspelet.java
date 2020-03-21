@@ -238,6 +238,10 @@ public class Talspelet {
         runGameAgain();
     }
 
+    /**
+     * This method checks what difficulty the players has chosen and calls the right method for the difficulty,
+     * but for multiplayer.
+     */
     private static void multiPlayerGameMode(){
         if (levelOfDifficulty != 3){
             easyOrNormalMultiPlayerGuessAlgorithm();
