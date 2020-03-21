@@ -252,6 +252,9 @@ public class Talspelet {
         runGameAgain();
     }
 
+    /**
+     * Randomizes a number easy, normal or hard depending of what level of difficulty the player has chosen.
+     */
     private static void randomizedNumberGenerator(){
         if (levelOfDifficulty == 1){
             correctAnswer = random.nextInt(11);
@@ -264,6 +267,9 @@ public class Talspelet {
         }
     }
 
+    /**
+     *  Calls for another method.
+     */
     private static void easyGameMode(){
         System.out.println("Easy gamemode has been chosen!");
         checkMultiPlayer();
